@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5e6e8 0%, #d5c6e0 50%, #c9e4de 100%);
+            background: linear-gradient(135deg, #faf8f5 0%, #f5f0e8 30%, #faf6f0 60%, #f8f4ee 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -25,43 +25,43 @@
 
         header {
             text-align: center;
-            color: #6b5b7b;
+            color: #5c5548;
             margin-bottom: 30px;
             padding: 30px 20px;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 252, 248, 0.9);
             border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(200, 180, 210, 0.3);
+            border: 1px solid rgba(210, 200, 180, 0.3);
+            box-shadow: 0 2px 15px rgba(180, 170, 150, 0.1);
         }
 
         header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
-            color: #7c6b8a;
+            color: #6b6355;
         }
 
         .subtitle {
             font-size: 1.1em;
-            color: #9b8eab;
+            color: #8a8278;
         }
 
         .section {
-            background: rgba(255, 255, 255, 0.75);
+            background: rgba(255, 252, 248, 0.85);
             border-radius: 15px;
             padding: 25px;
             margin-bottom: 25px;
-            box-shadow: 0 5px 20px rgba(180, 160, 190, 0.15);
-            border: 1px solid rgba(220, 210, 230, 0.4);
+            box-shadow: 0 3px 15px rgba(180, 170, 150, 0.08);
+            border: 1px solid rgba(220, 210, 195, 0.3);
         }
 
         .section h2 {
-            color: #7c6b8a;
+            color: #6b6355;
             margin-bottom: 5px;
             font-size: 1.4em;
         }
 
         .section-desc {
-            color: #a898b8;
+            color: #9b9488;
             margin-bottom: 15px;
             font-size: 0.95em;
         }
@@ -77,20 +77,20 @@
             align-items: center;
             gap: 10px;
             padding: 12px 15px;
-            background: linear-gradient(135deg, #e8d5e0 0%, #d5cce6 100%);
-            color: #6b5b7b;
+            background: linear-gradient(135deg, #faf5ed 0%, #f5ede0 100%);
+            color: #6b6355;
             text-decoration: none;
             border-radius: 10px;
             transition: all 0.3s ease;
             font-size: 0.9em;
-            border: 1px solid rgba(200, 185, 210, 0.3);
+            border: 1px solid rgba(200, 185, 165, 0.25);
         }
 
         .file-link:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(180, 150, 190, 0.3);
-            background: linear-gradient(135deg, #e0c8d5 0%, #ccc0e0 100%);
-            border-color: rgba(180, 160, 200, 0.5);
+            box-shadow: 0 8px 20px rgba(180, 165, 140, 0.2);
+            background: linear-gradient(135deg, #f5ede0 0%, #ede0d0 100%);
+            border-color: rgba(190, 175, 155, 0.4);
         }
 
         .file-link .icon {
@@ -100,51 +100,51 @@
         .file-link .method-name {
             font-weight: 600;
             font-size: 0.85em;
-            color: #7c6b8a;
+            color: #6b6355;
         }
 
         footer {
             text-align: center;
-            color: #8b7d9b;
+            color: #7a7368;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 252, 248, 0.9);
             border-radius: 15px;
-            backdrop-filter: blur(10px);
             margin-top: 10px;
-            border: 1px solid rgba(200, 180, 210, 0.3);
+            border: 1px solid rgba(210, 200, 180, 0.3);
+            box-shadow: 0 2px 15px rgba(180, 170, 150, 0.08);
         }
 
         footer code {
-            background: rgba(220, 200, 230, 0.3);
+            background: rgba(230, 220, 205, 0.4);
             padding: 3px 8px;
             border-radius: 5px;
             font-size: 0.9em;
-            color: #7c6b8a;
+            color: #6b6355;
         }
 
-        /* Добавляем мягкие тени и эффекты */
+        /* Мягкий эффект при наведении на секции */
         .section:hover {
-            box-shadow: 0 8px 25px rgba(180, 160, 190, 0.2);
+            box-shadow: 0 5px 20px rgba(180, 170, 150, 0.12);
             transition: box-shadow 0.3s ease;
         }
 
-        /* Украшаем скроллбар */
+        /* Скроллбар в молочных тонах */
         ::-webkit-scrollbar {
             width: 10px;
         }
 
         ::-webkit-scrollbar-track {
-            background: rgba(240, 235, 245, 0.5);
+            background: rgba(245, 240, 235, 0.5);
             border-radius: 10px;
         }
 
         ::-webkit-scrollbar-thumb {
-            background: rgba(200, 180, 210, 0.6);
+            background: rgba(210, 195, 175, 0.5);
             border-radius: 10px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: rgba(180, 160, 200, 0.8);
+            background: rgba(190, 175, 155, 0.7);
         }
 
         @media (max-width: 600px) {
@@ -247,8 +247,8 @@
             });
         });
 
-        console.log('Навигатор DOM-методов загружен!');
-        console.log(`Всего файлов: ${sections.length * domMethods.length}`);
+        console.log('🥛 Навигатор DOM-методов загружен!');
+        console.log(`📁 Всего файлов: ${sections.length * domMethods.length}`);
     </script>
 </body>
 </html>

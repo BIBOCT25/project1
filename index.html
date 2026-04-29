@@ -2,26 +2,215 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>getElementById</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-методы JavaScript - Навигатор</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .section h2 {
+            color: #4a5568;
+            margin-bottom: 5px;
+            font-size: 1.4em;
+        }
+
+        .section-desc {
+            color: #718096;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .file-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        .file-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .file-link .icon {
+            font-size: 1.3em;
+        }
+
+        .file-link .method-name {
+            font-weight: 600;
+            font-size: 0.85em;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            margin-top: 10px;
+        }
+
+        footer code {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .file-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>🌐 DOM-методы JavaScript</h1>
+            <p class="subtitle">Навигатор по примерам и лабораторным работам</p>
+        </header>
 
-    <input type="text" id="input1" value="первый">
-    <input type="text" id="input2" value="второй">
-    <input type="text" id="input3" value="третий">
-    <input type="text" id="input4" value="четвёртый">
+        <div class="section">
+            <h2>📘 Простые примеры</h2>
+            <p class="section-desc">Базовое использование методов для изменения цвета элементов</p>
+            <div class="file-grid" id="basic-examples"></div>
+        </div>
 
-    <br><br>
+        <div class="section">
+            <h2>🧮 Кредитный калькулятор</h2>
+            <p class="section-desc">Интерактивные примеры с обработчиками событий</p>
+            <div class="file-grid" id="calc-examples"></div>
+        </div>
 
-    <a id="a1">первый</a><br>
-    <a id="a2">второй</a><br>
-    <a id="a3">третий</a><br>
-    <a id="a4">четвёртый</a>
+        <div class="section">
+            <h2>🔢 Анализ числа (Лаб. работы)</h2>
+            <p class="section-desc">Определение знака и чётности числа</p>
+            <div class="file-grid" id="lab-examples"></div>
+        </div>
+
+        <div class="section">
+            <h2>💰 Кредитный калькулятор (Лаб. работы)</h2>
+            <p class="section-desc">Калькуляторы с валидацией данных</p>
+            <div class="file-grid" id="lab-calc-examples"></div>
+        </div>
+
+        <footer>
+            <p>Все калькуляторы используют формулу простых процентов: <code>сумма × (1 + ставка/100 × срок/12)</code></p>
+        </footer>
+    </div>
 
     <script>
-        document.getElementById('input4').style.color = 'yellow';
-        document.getElementById('a4').style.color = 'yellow';
-    </script>
+        // Список всех методов DOM
+        const domMethods = [
+            { method: 'getElementById', icon: '🆔', desc: 'Поиск по ID' },
+            { method: 'getElementsByName', icon: '🏷️', desc: 'Поиск по name' },
+            { method: 'getElementsByClassName', icon: '📦', desc: 'Поиск по классу' },
+            { method: 'getElementsByTagName', icon: '🔖', desc: 'Поиск по тегу' },
+            { method: 'querySelector', icon: '🎯', desc: 'CSS-селектор (один)' },
+            { method: 'querySelectorAll', icon: '📋', desc: 'CSS-селектор (все)' }
+        ];
 
+        // Структура разделов
+        const sections = [
+            { id: 'basic-examples', prefix: 'basic' },
+            { id: 'calc-examples', prefix: 'calc' },
+            { id: 'lab-examples', prefix: 'lab' },
+            { id: 'lab-calc-examples', prefix: 'lab_calc' }
+        ];
+
+        // Создание ссылки
+        function createLink(method, prefix) {
+            const link = document.createElement('a');
+            link.href = `${prefix}_${method}.html`;
+            link.className = 'file-link';
+            link.target = '_blank';
+            
+            const methodData = domMethods.find(m => m.method === method);
+            const icon = methodData ? methodData.icon : '📄';
+            const desc = methodData ? methodData.desc : method;
+            
+            link.innerHTML = `
+                <span class="icon">${icon}</span>
+                <span class="method-name">${desc}</span>
+            `;
+            
+            return link;
+        }
+
+        // Заполняем все разделы
+        sections.forEach(section => {
+            const container = document.getElementById(section.id);
+            if (!container) return;
+            
+            domMethods.forEach(({ method }) => {
+                const link = createLink(method, section.prefix);
+                container.appendChild(link);
+            });
+        });
+
+        console.log('Навигатор DOM-методов загружен!');
+        console.log(`Всего файлов: ${sections.length * domMethods.length}`);
+    </script>
 </body>
 </html>
